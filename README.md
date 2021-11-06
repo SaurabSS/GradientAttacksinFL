@@ -8,7 +8,7 @@ Georgia Institute of Technology<br />
 
 - [Directories Explained](#directories-explained)
 - [To Run](#to-run)
-- [Report](#analysis)
+- [Cross Dataset Analysis](#cross-dataset-analysis)
   <!-- * [Introductory Analysis](#introductory-analysis)
   * [Hardware Specifications](#hardware-specifications)
   * [Overview of the Tasks](#overview-of-the-tasks)
@@ -48,11 +48,21 @@ pip install <module-name>
 to fix that issue.
 
 
-## Analysis
+## Cross Dataset Analysis
+
+For CPL vs DLG analysis, look into `Assign4.pdf`. This section only covers the left out analysis on cross-dataset variance of an attack (DLG).
 
 <p align="center">
-  <img src="ImagesMaster/MultipleDatasets/GrandDLGonCIFAR100.png" width="550" title="hover text">
+  <img src="ImagesMaster/MultipleDatasets/GrandDLGonCIFAR100.png" width="600" title="hover text">
   <!-- <img src="your_relative_path_here_number_2_large_name" width="350" alt="accessibility text"> -->
 </p>
 
-Testing text.
+The image above shows the comparision of reconstruction convergence on a new dataset that is not studied in the paper `Assign4.pdf`, the CIFAR-100 dataset. In clockwise order, the plots indicate random initialization cost (iters or time) vs effect (MSE or SSIM) for class1, class2 with random initializations and class2,class1 with patterned initializations. Below each progress series of images in CIFAR-100 is a reference image from LFW dataset for comparision. 
+
+### Analysis
+
+1. The first striking observation from the image above is the fact that patterened initialization converges a lot quicker (look for the elbows in the graph) compared to random initialization. We confirmed the same observation for DLG as well as CPL in case of LFW dataset. This shows that the proposal for using a patterened initialization is universally applicable across datasets. 
+
+2. The second observation from the above image is that across the two classes, the convergence graph is roughly same for random as well as patterned initialization. This could be due to the fact that the interative (de)noise added to the image is proportional to the difference between the computed gradient and the stolen gradient. The chance that a random gradient in a hyperspace is close to the stolen gradient is extremely low. Hence, most of the convergence takes place in the first 50 iterations therefore making all of the images converge at around roughly same time.
+
+3. The third observation from the above image is that CIFAR-100 is taking longer than LFW to converge. There could be two reasons behind this. One, the label prediction following the argmin technique could be incorrect in this specific example. Two, since a human skin tone is fairly homogeneous, when faces are considered, it helps in covergence. This can also be seen in both the classes of the CIFAR-100 dataset where the background that is fairly homogeneous converges quicker than the central image that has more contrast edges. 
