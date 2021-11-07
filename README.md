@@ -9,7 +9,7 @@ Georgia Institute of Technology<br />
 - [Directories Explained](#directories-explained)
 - [To Run](#to-run)
 - [Cross Dataset Analysis (!! Complements the Report Submission)](#cross-dataset-analysis)
-- [Appendix: SSIM for Batch Size x Client Iterations](Appendix:-SSIM-for-Batch Size-x-Client-Iterations)
+- [Appendix: SSIM for Batch Size x Client Iterations](#appendix-ssim-for-batch-size-x-client-iterations)
   <!-- * [Introductory Analysis](#introductory-analysis)
   * [Hardware Specifications](#hardware-specifications)
   * [Overview of the Tasks](#overview-of-the-tasks)
