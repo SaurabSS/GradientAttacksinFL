@@ -69,38 +69,40 @@ The image above shows the comparision of reconstruction convergence on a new dat
 3. The third observation from the above image is that CIFAR-100 is taking longer than LFW to converge. There could be two reasons behind this. One, the label prediction following the argmin technique could be incorrect in this specific example. Two, since a human skin tone is fairly homogeneous, when faces are considered, it helps in covergence. This can also be seen in both the classes of the CIFAR-100 dataset where the background that is fairly homogeneous converges quicker than the central image that has more contrast edges. I feel that two is a more probable explanation compared to one.
 
 
-## Appendix: SSIM for Batch Size x Client Iterations
+## Appendix: Loss for for Batch Size x Client Iterations
 
-| Batchsize  	| Client Iterations 	| CPL SSIM 	| CPL MSE 	|  	|  	|
-|---	|---	|---	|---	|---	|---	|
-| 1 	| 1 	| 0.998 	| 0.0001 	|  	|  	|
-| 1 	| 2 	| 0.9976 	| 0.0001 	|  	|  	|
-| 1 	| 5 	| 0.9983 	| 0.0001 	|  	|  	|
-| 1 	| 10 	| 0.9981 	| 0.0 	|  	|  	|
-| 1 	| 20 	| 0.9983 	| 0.0 	|  	|  	|
-| 1 	| 50 	| 0.9981 	| 0.0001 	|  	|  	|
-| 5 	| 1 	| 0.285 	| 0.044 	|  	|  	|
-| 5 	| 2 	| 0.2858 	| 0.0439 	|  	|  	|
-| 5 	| 5 	| 0.2852 	| 0.044 	|  	|  	|
-| 5 	| 10 	| 0.2847 	| 0.044 	|  	|  	|
-| 5 	| 20 	| 0.2848 	| 0.0439 	|  	|  	|
-| 5 	| 50 	| 0.2855 	| 0.0441 	|  	|  	|
-| 10 	| 1 	| 0.2292 	| 0.0473 	|  	|  	|
-| 10 	| 2 	| 0.2287 	| 0.0473 	|  	|  	|
-| 10 	| 5 	| 0.2276 	| 0.0474 	|  	|  	|
-| 10 	| 10 	| 0.2277 	| 0.0473 	|  	|  	|
-| 10 	| 20 	| 0.2285 	| 0.0472 	|  	|  	|
-| 10 	| 50 	| 0.2284 	| 0.0474 	|  	|  	|
-| 20 	| 1 	| 0.1995 	| 0.0455 	|  	|  	|
-| 20 	| 2 	| 0.1997 	| 0.0455 	|  	|  	|
-| 20 	| 5 	| 0.1993 	| 0.0456 	|  	|  	|
-| 20 	| 10 	| 0.1988 	| 0.0455 	|  	|  	|
-| 20 	| 20 	| 0.1994 	| 0.0454 	|  	|  	|
-| 20 	| 50 	| 0.1996 	| 0.0456 	|  	|  	|
-| 32 	| 1 	| 0.212 	| 0.0463 	|  	|  	|
-| 32 	| 2 	| 0.2124 	| 0.0463 	|  	|  	|
-| 32 	| 5 	| 0.2126 	| 0.0463 	|  	|  	|
-| 32 	| 10 	| 0.2119 	| 0.0463 	|  	|  	|
-| 32 	| 20 	| 0.2124 	| 0.0462 	|  	|  	|
-| 32 	| 50 	| 0.2126 	| 0.0463 	|  	|  	|
-|  	|  	|  	|  	|  	|  	|
+| Batchsize  	| Client Iterations 	| CPL SSIM 	| CPL MSE 	|
+|---	|---	|---	|---	|
+| 1 	| 1 	| 0.5954 	| 0.005 	|
+| 5 	| 1 	| 0.1218 	| 0.0486 	|
+| 10 	| 1 	| 0.0813 	| 0.0666 	|
+| 20 	| 1 	| 0.0384 	| 0.0855 	|
+| 1 	| 2 	| 0.315 	| 0.0144 	|
+| 5 	| 2 	| 0.0547 	| 0.0964 	|
+| 10 	| 2 	| 0.0401 	| 0.1178 	|
+| 20 	| 2 	| 0.0264 	| 0.3639 	|
+| 1 	| 5 	| 0.1535 	| 0.0357 	|
+| 5 	| 5 	| 0.0421 	| 0.161 	|
+| 10 	| 5 	| 0.0297 	| 0.2115 	|
+| 20 	| 5 	| 0.0188 	| 0.3751 	|
+| 1 	| 10 	| 0.1227 	| 0.0458 	|
+| 5 	| 10 	| 0.0411 	| 0.0897 	|
+| 10 	| 10 	| 0.0233 	| 0.0886 	|
+| 20 	| 10 	| 0.0192 	| 0.0973 	|
+| 1 	| 20 	| 0.1206 	| 0.0452 	|
+| 5 	| 20 	| 0.0504 	| 0.0663 	|
+| 10 	| 20 	| 0.0467 	| 0.0709 	|
+| 20 	| 20 	| 0.0289 	| 0.1004 	|
+| 1 	| 50 	| 0.1039 	| 0.0495 	|
+| 5 	| 50 	| 0.0226 	| 0.1288 	|
+| 10 	| 50 	| 0.0135 	| 0.1724 	|
+| 20 	| 50 	| 0.0084 	| 0.2812 	|
+
+
+### Batch Size x Client Iterations Analysis
+
+1. The key observation from the table above is that we observe an increasing loss as the client iterations increase. However, this change is not significant as compared to batch size.
+
+2. Singular batch size has a significantly high lead in reconstruction, even compared to B=5. This can be attributed to the fact that images of the same class could have different backgrounds, and therefore the background cannot be reconstrcuted identical to image against which the loss is computed. Therefore, this sudden drop is expected.
+
+3. When we run the same computation on DLG, we see an extreme drop in reconstruction quality for BxL>10. Therefore, these values are not included in the table. (MSE goes beyond 70 for B>5 with L>2).  This run can be found in the python notebook in the github repo attached to the paper. 
