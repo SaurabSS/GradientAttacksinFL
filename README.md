@@ -9,7 +9,7 @@ Georgia Institute of Technology<br />
 - [Directories Explained](#directories-explained)
 - [To Run](#to-run)
 - [Cross Dataset Analysis (!! Complements the Report Submission)](#cross-dataset-analysis)
-- [Appendix: SSIM for Batch Size x Client Iterations](#appendix-ssim-for-batch-size-x-client-iterations)
+- [Loss rates for Batch Size x Client Iterations variations](#loss-rates-for-batch-size-x-client-variations)
   <!-- * [Introductory Analysis](#introductory-analysis)
   * [Hardware Specifications](#hardware-specifications)
   * [Overview of the Tasks](#overview-of-the-tasks)
@@ -69,7 +69,7 @@ The image above shows the comparision of reconstruction convergence on a new dat
 3. The third observation from the above image is that CIFAR-100 is taking longer than LFW to converge. There could be two reasons behind this. One, the label prediction following the argmin technique could be incorrect in this specific example. Two, since a human skin tone is fairly homogeneous, when faces are considered, it helps in covergence. This can also be seen in both the classes of the CIFAR-100 dataset where the background that is fairly homogeneous converges quicker than the central image that has more contrast edges. I feel that two is a more probable explanation compared to one.
 
 
-## Appendix: Loss for for Batch Size x Client Iterations
+## Loss rates for Batch Size x Client Variations
 
 | Batchsize  	| Client Iterations 	| CPL SSIM 	| CPL MSE 	|
 |---	|---	|---	|---	|
