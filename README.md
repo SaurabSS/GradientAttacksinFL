@@ -66,3 +66,33 @@ The image above shows the comparision of reconstruction convergence on a new dat
 2. The second observation from the above image is that across the two classes, the convergence graph is roughly same for random as well as patterned initialization. This could be due to the fact that the iterative (de)noise added to the image is proportional to the difference between the computed gradient and the stolen gradient. The chance that a random gradient in a hyperspace is close to the stolen gradient is extremely low. Hence, most of the convergence takes place in the first 50 iterations therefore making all of the images look like they converge at roughly the same time.
 
 3. The third observation from the above image is that CIFAR-100 is taking longer than LFW to converge. There could be two reasons behind this. One, the label prediction following the argmin technique could be incorrect in this specific example. Two, since a human skin tone is fairly homogeneous, when faces are considered, it helps in covergence. This can also be seen in both the classes of the CIFAR-100 dataset where the background that is fairly homogeneous converges quicker than the central image that has more contrast edges. I feel that two is a more probable explanation compared to one.
+
+
+## Appendix: Data for Batch Size, Client Iteration Combos in a Table
+
+| Batchsize  | Client Iterations | SSIM                |   |
+|------------|-------------------|---------------------|---|
+| 1          | 1                 | 0.9979590773582458  |   |
+| 1          | 2                 | 0.9975824952125549  |   |
+| 1          | 5                 | 0.9982738494873047  |   |
+| 1          | 10                | 0.998138427734375   |   |
+| 1          | 20                | 0.9983009696006775  |   |
+| 1          | 50                | 0.9980866312980652  |   |
+| 5          | 1                 | 0.28500548005104065 |   |
+| 5          | 2                 | 0.2857736349105835  |   |
+| 5          | 5                 | 0.2851814031600952  |   |
+| 5          | 10                | 0.28472834825515747 |   |
+| 5          | 20                | 0.2848474979400635  |   |
+| 5          | 50                | 0.2855464518070221  |   |
+| 10         | 1                 | 0.22924761474132538 |   |
+| 10         | 2                 | 0.22871355712413788 |   |
+| 10         | 5                 | 0.22763627767562866 |   |
+| 10         | 10                | 0.2276955097913742  |   |
+| 10         | 20                | 0.22852779924869537 |   |
+| 10         | 50                | 0.2284288853406906  |   |
+| 20         | 1                 | 0.1995251178741455  |   |
+| 20         | 2                 | 0.19965346157550812 |   |
+| 20         | 5                 | 0.19928032159805298 |   |
+| 20         | 10                | 0.19879615306854248 |   |
+| 20         |                   | 0.19937606155872345 |   |
+| 20         | 50                | 0.1995558738708496  |   |
